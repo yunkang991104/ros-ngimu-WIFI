@@ -1,0 +1,7 @@
+<launch>
+
+
+  <node name="ng_imu" pkg="ros-ngimu" type="ngimu_node" output="screen"/>
+
+
+</launch>

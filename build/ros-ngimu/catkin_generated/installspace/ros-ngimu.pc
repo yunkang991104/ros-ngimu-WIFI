@@ -1,0 +1,8 @@
+prefix=/home/yoseph/worckspace/ros-ngimu/install
+
+Name: ros-ngimu
+Description: Description of ros-ngimu
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
