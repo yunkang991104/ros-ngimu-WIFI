@@ -141,7 +141,7 @@ int main(int argc, char ** argv)
 {
     ros::init( argc, argv, "ngimu");
     ros::NodeHandle n;
-    imuPub = n.advertise<sensor_msgs::Imu>("/ngimu/imu", 400);
+    imuPub = n.advertise<sensor_msgs::Imu>("/imu/data", 400);
     accelTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/accel/temperature", 400);
     gyroTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/gyro/temperature", 400);
 

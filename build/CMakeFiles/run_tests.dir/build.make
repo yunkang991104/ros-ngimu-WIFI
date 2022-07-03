@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yoseph/worckspace/ros-ngimu/src
+CMAKE_SOURCE_DIR = /home/yang/workspace/ros-ngimu/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yoseph/worckspace/ros-ngimu/build
+CMAKE_BINARY_DIR = /home/yang/workspace/ros-ngimu/build
 
 # Utility rule file for run_tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/yoseph/worckspace/ros-ngimu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yoseph/worckspace/ros-ngimu/src /home/yoseph/worckspace/ros-ngimu/src /home/yoseph/worckspace/ros-ngimu/build /home/yoseph/worckspace/ros-ngimu/build /home/yoseph/worckspace/ros-ngimu/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yang/workspace/ros-ngimu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/workspace/ros-ngimu/src /home/yang/workspace/ros-ngimu/src /home/yang/workspace/ros-ngimu/build /home/yang/workspace/ros-ngimu/build /home/yang/workspace/ros-ngimu/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

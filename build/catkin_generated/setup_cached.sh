@@ -7,8 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/yoseph/worckspace/ros-ngimu/devel:$CMAKE_PREFIX_PATH"
-export PATH='/opt/ros/noetic/bin:/home/yoseph/anaconda3/bin:/home/yoseph/anaconda3/bin:/home/yoseph/anaconda3/condabin:/home/yoseph/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
-export PWD='/home/yoseph/worckspace/ros-ngimu/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/yoseph/worckspace/ros-ngimu/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/yoseph/worckspace/ros-ngimu/src:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/yang/workspace/ros-ngimu/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/yang/workspace/ros-ngimu/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/yang/workspace/ros-ngimu/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/yang/workspace/ros-ngimu/src:$ROS_PACKAGE_PATH"

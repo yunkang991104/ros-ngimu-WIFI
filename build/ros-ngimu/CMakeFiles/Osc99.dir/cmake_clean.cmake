@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/yoseph/worckspace/ros-ngimu/devel/lib/libOsc99.pdb"
-  "/home/yoseph/worckspace/ros-ngimu/devel/lib/libOsc99.so"
+  "/home/yang/workspace/ros-ngimu/devel/lib/libOsc99.pdb"
+  "/home/yang/workspace/ros-ngimu/devel/lib/libOsc99.so"
   "CMakeFiles/Osc99.dir/src/Osc99/OscAddress.c.o"
   "CMakeFiles/Osc99.dir/src/Osc99/OscBundle.c.o"
   "CMakeFiles/Osc99.dir/src/Osc99/OscCommon.c.o"

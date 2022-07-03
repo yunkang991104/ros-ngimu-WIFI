@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yoseph/worckspace/ros-ngimu/src
+CMAKE_SOURCE_DIR = /home/yang/workspace/ros-ngimu/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yoseph/worckspace/ros-ngimu/build
+CMAKE_BINARY_DIR = /home/yang/workspace/ros-ngimu/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoseph/worckspace/ros-ngimu/build/CMakeFiles /home/yoseph/worckspace/ros-ngimu/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yang/workspace/ros-ngimu/build/CMakeFiles /home/yang/workspace/ros-ngimu/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/yoseph/worckspace/ros-ngimu/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yang/workspace/ros-ngimu/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -294,7 +294,7 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -307,7 +307,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make ros-ngimu/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make imu_calib-master/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -320,7 +320,7 @@ geometry_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -333,8 +333,21 @@ geometry_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named apply_calib
+
+# Build rule for target.
+apply_calib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 apply_calib
+.PHONY : apply_calib
+
+# fast build rule for target.
+apply_calib/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/apply_calib.dir/build.make imu_calib-master/CMakeFiles/apply_calib.dir/build
+.PHONY : apply_calib/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_lisp
@@ -346,7 +359,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -359,7 +372,7 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -372,8 +385,21 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make ros-ngimu/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make imu_calib-master/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_nodejs
+
+# Build rule for target.
+roscpp_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
+.PHONY : roscpp_generate_messages_nodejs
+
+# fast build rule for target.
+roscpp_generate_messages_nodejs/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make imu_calib-master/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_eus
@@ -385,7 +411,7 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make ros-ngimu/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make imu_calib-master/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -398,21 +424,8 @@ geometry_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
-
-# Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/roscpp_generate_messages_py.dir/build.make ros-ngimu/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
@@ -424,7 +437,7 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make ros-ngimu/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make imu_calib-master/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -437,7 +450,7 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -450,7 +463,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/roscpp_generate_messages_eus.dir/build.make ros-ngimu/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/roscpp_generate_messages_eus.dir/build.make imu_calib-master/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -463,7 +476,7 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -476,7 +489,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make ros-ngimu/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make imu_calib-master/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -489,7 +502,7 @@ sensor_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -502,7 +515,7 @@ sensor_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -515,7 +528,7 @@ sensor_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -528,7 +541,7 @@ geometry_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -541,7 +554,7 @@ std_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/std_msgs_generate_messages_py.dir/build.make ros-ngimu/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/std_msgs_generate_messages_py.dir/build.make imu_calib-master/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -554,7 +567,7 @@ sensor_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make ros-ngimu/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make imu_calib-master/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -567,7 +580,7 @@ std_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make ros-ngimu/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make imu_calib-master/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -580,34 +593,60 @@ geometry_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make ros-ngimu/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make imu_calib-master/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_nodejs
+# Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
-roscpp_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
-.PHONY : roscpp_generate_messages_nodejs
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
 
 # fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make ros-ngimu/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/roscpp_generate_messages_py.dir/build.make imu_calib-master/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
-# Target rules for targets named Osc99
+# Target rules for targets named accel_calib
 
 # Build rule for target.
-Osc99: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Osc99
-.PHONY : Osc99
+accel_calib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 accel_calib
+.PHONY : accel_calib
 
 # fast build rule for target.
-Osc99/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/Osc99.dir/build.make ros-ngimu/CMakeFiles/Osc99.dir/build
-.PHONY : Osc99/fast
+accel_calib/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/accel_calib.dir/build.make imu_calib-master/CMakeFiles/accel_calib.dir/build
+.PHONY : accel_calib/fast
+
+#=============================================================================
+# Target rules for targets named do_calib
+
+# Build rule for target.
+do_calib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 do_calib
+.PHONY : do_calib
+
+# fast build rule for target.
+do_calib/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/do_calib.dir/build.make imu_calib-master/CMakeFiles/do_calib.dir/build
+.PHONY : do_calib/fast
+
+#=============================================================================
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+
+# Build rule for target.
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make imu_calib-master/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named ngimu_node
@@ -623,17 +662,17 @@ ngimu_node/fast:
 .PHONY : ngimu_node/fast
 
 #=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
+# Target rules for targets named Osc99
 
 # Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
+Osc99: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Osc99
+.PHONY : Osc99
 
 # fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make ros-ngimu/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+Osc99/fast:
+	$(MAKE) -f ros-ngimu/CMakeFiles/Osc99.dir/build.make ros-ngimu/CMakeFiles/Osc99.dir/build
+.PHONY : Osc99/fast
 
 # Help Target
 help:
@@ -661,12 +700,13 @@ help:
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
+	@echo "... apply_calib"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_cpp"
+	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
@@ -680,10 +720,12 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... Osc99"
-	@echo "... ngimu_node"
+	@echo "... roscpp_generate_messages_py"
+	@echo "... accel_calib"
+	@echo "... do_calib"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... ngimu_node"
+	@echo "... Osc99"
 .PHONY : help
 
 

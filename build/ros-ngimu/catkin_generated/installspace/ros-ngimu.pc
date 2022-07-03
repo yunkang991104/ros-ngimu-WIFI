@@ -1,4 +1,4 @@
-prefix=/home/yoseph/worckspace/ros-ngimu/install
+prefix=/home/yang/workspace/ros-ngimu/install
 
 Name: ros-ngimu
 Description: Description of ros-ngimu

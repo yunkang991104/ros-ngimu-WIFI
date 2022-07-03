@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/yoseph/worckspace/ros-ngimu/devel/lib/ros-ngimu/ngimu_node"
-  "/home/yoseph/worckspace/ros-ngimu/devel/lib/ros-ngimu/ngimu_node.pdb"
+  "/home/yang/workspace/ros-ngimu/devel/lib/ros-ngimu/ngimu_node"
+  "/home/yang/workspace/ros-ngimu/devel/lib/ros-ngimu/ngimu_node.pdb"
   "CMakeFiles/ngimu_node.dir/src/NgimuReceive.cc.o"
   "CMakeFiles/ngimu_node.dir/src/Osc99/OscAddress.c.o"
   "CMakeFiles/ngimu_node.dir/src/Osc99/OscBundle.c.o"

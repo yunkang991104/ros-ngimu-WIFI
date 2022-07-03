@@ -1,8 +1,8 @@
-# Install script for directory: /home/yoseph/worckspace/ros-ngimu/src/ros-ngimu
+# Install script for directory: /home/yang/workspace/ros-ngimu/src/ros-ngimu
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yoseph/worckspace/ros-ngimu/install")
+  set(CMAKE_INSTALL_PREFIX "/home/yang/workspace/ros-ngimu/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yoseph/worckspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimu.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yang/workspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimu.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros-ngimu/cmake" TYPE FILE FILES
-    "/home/yoseph/worckspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimuConfig.cmake"
-    "/home/yoseph/worckspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimuConfig-version.cmake"
+    "/home/yang/workspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimuConfig.cmake"
+    "/home/yang/workspace/ros-ngimu/build/ros-ngimu/catkin_generated/installspace/ros-ngimuConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros-ngimu" TYPE FILE FILES "/home/yoseph/worckspace/ros-ngimu/src/ros-ngimu/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ros-ngimu" TYPE FILE FILES "/home/yang/workspace/ros-ngimu/src/ros-ngimu/package.xml")
 endif()
 

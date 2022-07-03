@@ -1,0 +1,9 @@
+<launch>
+
+  <rosparam file="$(find imu_calib)/config/imu_calib.yaml" command="load" />
+
+  <node name="ng_imu" pkg="ros-ngimu" type="ngimu_node" output="screen"/>
+
+  <node name="calib_imu" pkg="imu_calib" type="apply_calib" output="screen"/>
+
+</launch>

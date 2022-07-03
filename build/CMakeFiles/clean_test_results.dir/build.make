@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/yoseph/worckspace/ros-ngimu/src
+CMAKE_SOURCE_DIR = /home/yang/workspace/ros-ngimu/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/yoseph/worckspace/ros-ngimu/build
+CMAKE_BINARY_DIR = /home/yang/workspace/ros-ngimu/build
 
 # Utility rule file for clean_test_results.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/yoseph/worckspace/ros-ngimu/build
 include CMakeFiles/clean_test_results.dir/progress.make
 
 CMakeFiles/clean_test_results:
-	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/yoseph/worckspace/ros-ngimu/build/test_results
+	/usr/bin/python3 /opt/ros/noetic/share/catkin/cmake/test/remove_test_results.py /home/yang/workspace/ros-ngimu/build/test_results
 
 clean_test_results: CMakeFiles/clean_test_results
 clean_test_results: CMakeFiles/clean_test_results.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/clean_test_results.dir/clean:
 .PHONY : CMakeFiles/clean_test_results.dir/clean
 
 CMakeFiles/clean_test_results.dir/depend:
-	cd /home/yoseph/worckspace/ros-ngimu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yoseph/worckspace/ros-ngimu/src /home/yoseph/worckspace/ros-ngimu/src /home/yoseph/worckspace/ros-ngimu/build /home/yoseph/worckspace/ros-ngimu/build /home/yoseph/worckspace/ros-ngimu/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yang/workspace/ros-ngimu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yang/workspace/ros-ngimu/src /home/yang/workspace/ros-ngimu/src /home/yang/workspace/ros-ngimu/build /home/yang/workspace/ros-ngimu/build /home/yang/workspace/ros-ngimu/build/CMakeFiles/clean_test_results.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/clean_test_results.dir/depend
 

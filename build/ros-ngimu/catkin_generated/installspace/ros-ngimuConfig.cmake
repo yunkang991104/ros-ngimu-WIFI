@@ -67,14 +67,14 @@ set(ros-ngimu_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(ros-ngimu_SOURCE_PREFIX /home/yoseph/worckspace/ros-ngimu/src/ros-ngimu)
-  set(ros-ngimu_DEVEL_PREFIX /home/yoseph/worckspace/ros-ngimu/devel)
+  set(ros-ngimu_SOURCE_PREFIX /home/yang/workspace/ros-ngimu/src/ros-ngimu)
+  set(ros-ngimu_DEVEL_PREFIX /home/yang/workspace/ros-ngimu/devel)
   set(ros-ngimu_INSTALL_PREFIX "")
   set(ros-ngimu_PREFIX ${ros-ngimu_DEVEL_PREFIX})
 else()
   set(ros-ngimu_SOURCE_PREFIX "")
   set(ros-ngimu_DEVEL_PREFIX "")
-  set(ros-ngimu_INSTALL_PREFIX /home/yoseph/worckspace/ros-ngimu/install)
+  set(ros-ngimu_INSTALL_PREFIX /home/yang/workspace/ros-ngimu/install)
   set(ros-ngimu_PREFIX ${ros-ngimu_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/yoseph/worckspace/ros-ngimu/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/yang/workspace/ros-ngimu/install/lib;/home/yang/workspace/IMU-cal/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
