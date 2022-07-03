@@ -15,3 +15,7 @@
 ## Run imu clibration data
 
 	roslaunch ros-ngimu run_cal.launch
+	
+## Run rviz imu data
+
+	roslaunch ros-ngimu run_rviz.launch
