@@ -33,9 +33,9 @@ void ngimuSensorsCallback(const NgimuSensors ngimuSensors)
     // ROS_INFO("Sensors time - %", ngimuSensors.timestamp)
 
     // accelerometer
-    imuData.linear_acceleration.x = ngimuSensors.accelerometerX;
-    imuData.linear_acceleration.y = ngimuSensors.accelerometerY;
-    imuData.linear_acceleration.z = ngimuSensors.accelerometerZ;
+    imuData.linear_acceleration.x = ngimuSensors.accelerometerX * 9.8;
+    imuData.linear_acceleration.y = ngimuSensors.accelerometerY * 9.8;
+    imuData.linear_acceleration.z = ngimuSensors.accelerometerZ * 9.8;
     // gyroscope
     imuData.angular_velocity.x = ngimuSensors.gyroscopeX;
     imuData.angular_velocity.y = ngimuSensors.gyroscopeY;
@@ -74,7 +74,7 @@ void ngimuTemperatureCallback(const NgimuTemperature ngimuTemperature)
 
 void initComPort()
 {
-    int serialPort = open("/dev/ttyACM1", O_RDWR);
+    int serialPort = open("/dev/ttyACM0", O_RDWR);
 
     ROS_INFO("SUCCESS connect IMU sensor");
 
@@ -137,6 +137,19 @@ void receiveImu()
 
 }
 
+// void ngimuEularCallback(const NgimuEuler ngimuEuler)
+// {
+//     float roll = ngimuEuler.roll;
+//     float pitch = ngimuEuler.pitch;
+//     float yaw = ngimuEuler.yaw;
+
+//     ROS_INFO("roll : %f", roll);
+//     ROS_INFO("pitch : %f", pitch);
+//     ROS_INFO("yaw : %f", yaw);
+
+// }
+
+
 int main(int argc, char ** argv)
 {
     ros::init( argc, argv, "ngimu");
@@ -154,8 +167,10 @@ int main(int argc, char ** argv)
 
     // init IMU sensor
     NgimuReceiveInitialise();
+    // NgimuReceiveSetEulerCallback(ngimuEularCallback);
     NgimuReceiveSetSensorsCallback(ngimuSensorsCallback);
     NgimuReceiveSetQuaternionCallback(ngimuQuaternionCallback);
+
     NgimuReceiveSetTemperatureCallback(ngimuTemperatureCallback);
     
     ros::spin();
