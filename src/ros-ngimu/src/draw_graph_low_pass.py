@@ -16,32 +16,39 @@ z_acc_list = []
 index = count()
 
 x_index = []
-y = []
+x_esti_list = []
+x_esti = 0
+
 
 def Imucallback(msg):
+    global x_esti
+
     x_acc_list.append(msg.linear_acceleration.x)
     y_acc_list.append(msg.linear_acceleration.y)
     z_acc_list.append(msg.linear_acceleration.z)
     x_index.append(next(index))
+    x_meas = x_acc_list[-1]
+
+    x_esti = lpf.low_pass_filter(x_meas, x_esti)
+
+    x_esti_list.append(x_esti)
 
     # print(x_acc_list)
     # print(y_acc_list)
     # print(z_acc_list)
 
 def animate(i):
-    x_index.append(next(index))
-
-    y.append(lpf.butter_lowpass_filter(data = y_acc_list, cutoff = 3.667, fs = 30.0, order = 6))
 
     plt.cla()
-    plt.plot(x_index[:len(x_acc_list)], x_acc_list)
- 
+    plt.plot(x_index[int(len(x_esti_list)/4):len(x_esti_list)], x_esti_list[int(len(x_esti_list)/4):len(x_esti_list)])
+    plt.plot(x_index[int(len(x_acc_list)/4):len(x_acc_list)], x_acc_list[int(len(x_acc_list)/4):len(x_acc_list)])
+
 
 
 if __name__ == "__main__":
     rospy.init_node('Imu_read', anonymous=True)
     imu_sub = rospy.Subscriber('/imu/data', Imu, Imucallback)
-    
+
     ani = FuncAnimation(plt.gcf(), animate, interval = 40)
  
     plt.tight_layout()
