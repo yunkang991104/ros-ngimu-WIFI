@@ -39,9 +39,11 @@ def Imucallback(msg):
 
 def animate(i):
 
-    plt.cla()
-    plt.plot(x_index[int(len(x_esti_list)/4):len(x_esti_list)], x_esti_list[int(len(x_esti_list)/4):len(x_esti_list)])
-    plt.plot(x_index[int(len(x_acc_list)/4):len(x_acc_list)], x_acc_list[int(len(x_acc_list)/4):len(x_acc_list)])
+    if len(x_esti_list):
+        plt.cla()
+        plt.plot(x_index[int(len(x_acc_list)/3):len(x_acc_list)], x_acc_list[int(len(x_acc_list)/3):len(x_acc_list)])
+        plt.plot(x_index[int(len(x_esti_list)/3):len(x_esti_list)], x_esti_list[int(len(x_esti_list)/3):len(x_esti_list)])
+        # plt.plot(x_index[:len(x_esti_list)], x_esti_list[:len(x_esti_list)])
 
 
 

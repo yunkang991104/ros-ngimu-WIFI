@@ -31,8 +31,6 @@ def Imucallback(msg):
 def animate(i):
     x_index.append(next(index))
 
-    y.append(lpf.butter_lowpass_filter(data = y_acc_list, cutoff = 3.667, fs = 30.0, order = 6))
-
     plt.cla()
     plt.plot(x_index[:len(x_acc_list)], x_acc_list)
  
@@ -43,7 +41,7 @@ if __name__ == "__main__":
     imu_sub = rospy.Subscriber('/imu/data', Imu, Imucallback)
     
     ani = FuncAnimation(plt.gcf(), animate, interval = 40)
- 
+    
     plt.tight_layout()
     plt.show()
     rospy.spin()
