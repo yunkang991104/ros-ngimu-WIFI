@@ -74,7 +74,7 @@ void ngimuTemperatureCallback(const NgimuTemperature ngimuTemperature)
 
 void initComPort()
 {
-    int serialPort = open("/dev/ttyACM0", O_RDWR);
+    int serialPort = open("/dev/ttyACM1", O_RDWR);
 
     ROS_INFO("SUCCESS connect IMU sensor");
 

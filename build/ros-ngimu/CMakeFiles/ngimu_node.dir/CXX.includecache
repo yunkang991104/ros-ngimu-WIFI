@@ -82,14 +82,6 @@ OscError.h
 OscPacket.h
 /home/yang/workspace/ros-ngimu/src/ros-ngimu/include/Osc99/OscPacket.h
 
-/home/yang/workspace/ros-ngimu/src/ros-ngimu/src/NgimuReceive.cc
-NgimuReceive.h
-/home/yang/workspace/ros-ngimu/src/ros-ngimu/src/NgimuReceive.h
-stddef.h
--
-stdio.h
--
-
 /home/yang/workspace/ros-ngimu/src/ros-ngimu/src/node.cc
 ros/ros.h
 -
