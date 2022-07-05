@@ -1,7 +1,7 @@
 <launch>
 
 
-  <node name="ng_imu" pkg="ros-ngimu" type="ngimu_node" output="screen"/>
+  <node name="ng_imu" pkg="ros-ngimu" type="ngimu_node" respawn="true" output="screen"/>
 
 
 </launch>
