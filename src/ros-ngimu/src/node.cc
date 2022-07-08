@@ -18,14 +18,33 @@
 #include <string.h>
 
 ros::Publisher imuPub;
+ros::Publisher imu_low_pass_Pub;
 ros::Publisher magPub;
 
-ros::Publisher accelTempPub;
-ros::Publisher gyroTempPub;
+// ros::Publisher accelTempPub;
+// ros::Publisher gyroTempPub;
 int mSerialPort = -1;
 
 sensor_msgs::Imu imuData;
+sensor_msgs::Imu imu_low_pass_data;
+
 sensor_msgs::MagneticField mag_data;
+
+float alpha = 0.9;
+float before_x_accel_data = 0;
+float before_y_accel_data = 0;
+float before_z_accel_data = 0;
+
+void accel_low_pass_filter()
+{
+    before_x_accel_data = imu_low_pass_data.linear_acceleration.x;
+    before_y_accel_data = imu_low_pass_data.linear_acceleration.y;
+    before_z_accel_data = imu_low_pass_data.linear_acceleration.z;
+
+    imu_low_pass_data.linear_acceleration.x = alpha * before_x_accel_data + (1 - alpha) * imuData.linear_acceleration.x;
+    imu_low_pass_data.linear_acceleration.y = alpha * before_y_accel_data + (1 - alpha) * imuData.linear_acceleration.y;
+    imu_low_pass_data.linear_acceleration.z = alpha * before_z_accel_data + (1 - alpha) * imuData.linear_acceleration.z;
+}
 
 
 void ngimuSensorsCallback(const NgimuSensors ngimuSensors)
@@ -51,15 +70,13 @@ void ngimuSensorsCallback(const NgimuSensors ngimuSensors)
     imuData.angular_velocity.z = ngimuSensors.gyroscopeZ;
     
     // magnetometer
-
     mag_data.magnetic_field.x = ngimuSensors.magnetometerX;
     mag_data.magnetic_field.y = ngimuSensors.magnetometerY;
     mag_data.magnetic_field.z = ngimuSensors.magnetometerZ;
 
     magPub.publish(mag_data);
-
-
 };
+
 
 void ngimuQuaternionCallback(const NgimuQuaternion ngimuQuaternion)
 {
@@ -71,8 +88,15 @@ void ngimuQuaternionCallback(const NgimuQuaternion ngimuQuaternion)
     imuData.orientation.z = ngimuQuaternion.z;
     imuData.orientation.w = ngimuQuaternion.w;
 
+    imu_low_pass_data = imuData;
+
+    accel_low_pass_filter();
+
     imuPub.publish(imuData);
+    imu_low_pass_Pub.publish(imu_low_pass_data);
+
 }
+
 
 void ngimuTemperatureCallback(const NgimuTemperature ngimuTemperature)
 {
@@ -97,13 +121,13 @@ void initComPort()
     ROS_INFO("SUCCESS connect IMU sensor");
 
     if (serialPort < 0) {
-        printf("Error %i from open: %s\n", errno, strerror(errno));
+        ROS_ERROR("Error %i from open: %s\n", errno, strerror(errno));
     }
 
     struct termios tty;
     // Read in existing settings, and handle any error
     if(tcgetattr(serialPort, &tty) != 0) {
-        printf("Error %i from tcgetattr: %s\n", errno, strerror(errno));
+        ROS_ERROR("Error %i from tcgetattr: %s\n", errno, strerror(errno));
     }
 
     tty.c_cflag &= ~PARENB; // Clear parity bit, disabling parity (most common)
@@ -134,7 +158,7 @@ void initComPort()
 
 
     if (tcsetattr(serialPort, TCSANOW, &tty) != 0) {
-        printf("Error %i from tcsetattr: %s\n", errno, strerror(errno));
+        ROS_ERROR("Error %i from tcsetattr: %s\n", errno, strerror(errno));
     }
     ::mSerialPort = serialPort;
 }
@@ -174,8 +198,10 @@ int main(int argc, char ** argv)
     ros::NodeHandle n;
     imuPub = n.advertise<sensor_msgs::Imu>("/imu/data_raw", 400);
     magPub = n.advertise<sensor_msgs::MagneticField>("/imu/mag", 400);
-    accelTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/accel/temperature", 400);
-    gyroTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/gyro/temperature", 400);
+    imu_low_pass_Pub = n.advertise<sensor_msgs::Imu>("/imu/low_pass", 400);
+
+    // accelTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/accel/temperature", 400);
+    // gyroTempPub = n.advertise<sensor_msgs::Temperature>("/ngimu/gyro/temperature", 400);
 
     initComPort();
 
@@ -183,6 +209,7 @@ int main(int argc, char ** argv)
     th1.detach();
 
     sensor_msgs::Imu imuData;
+    sensor_msgs::Imu imu_low_pass_data;
     sensor_msgs::MagneticField mag_data;
     
     // init IMU sensor
