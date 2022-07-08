@@ -11,11 +11,11 @@
 
   <joint name="base_joint" type="fixed">
     <parent link="base_footprint"/>
-    <child link="imu" />
+    <child link="imu_link" />
     <origin xyz="0 0 0.0" rpy="0 0 0"/>
   </joint>
 
-  <link name="imu">
+  <link name="imu_link">
     <visual>
       <origin xyz="0 0 0.0" rpy="0 0 0"/>
       <geometry>

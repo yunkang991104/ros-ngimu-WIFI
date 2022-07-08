@@ -19,3 +19,9 @@
 ## Run rviz imu data
 
 	roslaunch ros-ngimu run_rviz.launch
+	
+	
+## apply imu accel data low pass filter 
+
+	roslaunch ros-ngimu run_rviz.launch
+	python src/ros-ngimu/src/draw_graph_low_pass.py

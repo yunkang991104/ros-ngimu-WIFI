@@ -5,9 +5,11 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Status1
-        - /Imu1
-      Splitter Ratio: 0.5
+        - /Imu2
+        - /Imu2/Box properties1
+        - /Imu2/Axes properties1
+        - /Imu2/Acceleration properties1
+      Splitter Ratio: 0.49117645621299744
     Tree Height: 549
   - Class: rviz/Selection
     Name: Selection
@@ -56,42 +58,29 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        imu:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Alpha: 1
       Class: rviz_plugin_tutorials/Imu
       Color: 204; 51; 204
-      Enabled: true
+      Enabled: false
       History Length: 1
       Name: Imu
       Queue Size: 10
       Topic: /imu/clib
       Unreliable: false
-      Value: true
+      Value: false
     - Alpha: 1
       Class: rviz/Axes
       Enabled: true
@@ -101,11 +90,35 @@ Visualization Manager:
       Reference Frame: <Fixed Frame>
       Show Trail: false
       Value: true
+    - Acceleration properties:
+        Acc. vector alpha: 1
+        Acc. vector color: 255; 0; 0
+        Acc. vector scale: 1
+        Derotate acceleration: false
+        Enable acceleration: false
+      Axes properties:
+        Axes scale: 1
+        Enable axes: true
+      Box properties:
+        Box alpha: 1
+        Box color: 255; 0; 0
+        Enable box: true
+        x_scale: 1
+        y_scale: 1
+        z_scale: 0.10000000149011612
+      Class: rviz_imu_plugin/Imu
+      Enabled: true
+      Name: Imu
+      Queue Size: 10
+      Topic: /imu/data_raw
+      Unreliable: false
+      Value: true
+      fixed_frame_orientation: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: imu
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -129,7 +142,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 38.3316650390625
+      Distance: 12.396430015563965
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -137,17 +150,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.6188766956329346
-        Y: -0.7083274126052856
-        Z: 0.0031088944524526596
+        X: -0.39477306604385376
+        Y: -0.5415847301483154
+        Z: 0.05877251923084259
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5553972721099854
+      Pitch: 0.6353970170021057
       Target Frame: <Fixed Frame>
-      Yaw: 0.9853973388671875
+      Yaw: 6.108575344085693
     Saved: ~
 Window Geometry:
   Displays:
@@ -166,4 +179,4 @@ Window Geometry:
     collapsed: false
   Width: 1267
   X: 554
-  Y: 377
+  Y: 303

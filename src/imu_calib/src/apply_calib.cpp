@@ -82,8 +82,8 @@ ApplyCalib::ApplyCalib() :
   int queue_size;
   nh_private.param<int>("queue_size", queue_size, 5);
 
-  raw_sub_ = nh.subscribe("/imu/data", queue_size, &ApplyCalib::rawImuCallback, this);
-  corrected_pub_ = nh.advertise<sensor_msgs::Imu>("/imu/clib", queue_size);
+  raw_sub_ = nh.subscribe("/imu/data_raw", queue_size, &ApplyCalib::rawImuCallback, this);
+  corrected_pub_ = nh.advertise<sensor_msgs::Imu>("/imu/calib", queue_size);
 }
 
 void ApplyCalib::rawImuCallback(sensor_msgs::Imu::ConstPtr raw)
