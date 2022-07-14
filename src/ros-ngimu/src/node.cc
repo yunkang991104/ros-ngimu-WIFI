@@ -35,15 +35,29 @@ float before_x_accel_data = 0;
 float before_y_accel_data = 0;
 float before_z_accel_data = 0;
 
+float before_x_gyr_data = 0;
+float before_y_gyr_data = 0;
+float before_z_gyr_data = 0;
+
 void accel_low_pass_filter()
 {
     before_x_accel_data = imu_low_pass_data.linear_acceleration.x;
     before_y_accel_data = imu_low_pass_data.linear_acceleration.y;
     before_z_accel_data = imu_low_pass_data.linear_acceleration.z;
 
+    before_x_gyr_data = imu_low_pass_data.angular_velocity.x;
+    before_y_gyr_data = imu_low_pass_data.angular_velocity.y;
+    before_z_gyr_data = imu_low_pass_data.angular_velocity.z;
+
+
     imu_low_pass_data.linear_acceleration.x = alpha * before_x_accel_data + (1 - alpha) * imuData.linear_acceleration.x;
     imu_low_pass_data.linear_acceleration.y = alpha * before_y_accel_data + (1 - alpha) * imuData.linear_acceleration.y;
     imu_low_pass_data.linear_acceleration.z = alpha * before_z_accel_data + (1 - alpha) * imuData.linear_acceleration.z;
+
+    imu_low_pass_data.angular_velocity.x = alpha * before_x_gyr_data + (1 - alpha) * imuData.angular_velocity.x;
+    imu_low_pass_data.angular_velocity.y = alpha * before_y_gyr_data + (1 - alpha) * imuData.angular_velocity.y;
+    imu_low_pass_data.angular_velocity.z = alpha * before_z_gyr_data + (1 - alpha) * imuData.angular_velocity.z;
+
 }
 
 
@@ -65,9 +79,9 @@ void ngimuSensorsCallback(const NgimuSensors ngimuSensors)
     imuData.linear_acceleration.z = ngimuSensors.accelerometerZ * 9.8;
 
     // gyroscope
-    imuData.angular_velocity.x = ngimuSensors.gyroscopeX;
-    imuData.angular_velocity.y = ngimuSensors.gyroscopeY;
-    imuData.angular_velocity.z = ngimuSensors.gyroscopeZ;
+    imuData.angular_velocity.x = ngimuSensors.gyroscopeX * 0.0174533;
+    imuData.angular_velocity.y = ngimuSensors.gyroscopeY * 0.0174533;
+    imuData.angular_velocity.z = ngimuSensors.gyroscopeZ * 0.0174533;
     
     // magnetometer
     mag_data.magnetic_field.x = ngimuSensors.magnetometerX;

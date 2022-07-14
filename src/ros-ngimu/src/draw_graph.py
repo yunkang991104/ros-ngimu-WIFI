@@ -38,7 +38,7 @@ def animate(i):
 
 if __name__ == "__main__":
     rospy.init_node('Imu_read', anonymous=True)
-    imu_sub = rospy.Subscriber('/imu/data', Imu, Imucallback)
+    imu_sub = rospy.Subscriber('/imu/data_raw', Imu, Imucallback)
     
     ani = FuncAnimation(plt.gcf(), animate, interval = 40)
     
