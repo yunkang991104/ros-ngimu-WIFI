@@ -25,3 +25,9 @@
 
 	roslaunch ros-ngimu run_rviz.launch
 	python src/ros-ngimu/src/draw_graph_low_pass.py
+	
+	
+## run madgwick filter
+	
+	roslaunch ros-ngimu run_rviz.launch
+	roslaunch imu_filter_madgwick imu_filter_madgwick.launch
