@@ -97,9 +97,9 @@ void ngimuQuaternionCallback(const NgimuQuaternion ngimuQuaternion)
     // set time
     imuData.header.stamp = ros::Time::now();
 
-    imuData.orientation.x = ngimuQuaternion.x;
-    imuData.orientation.y = ngimuQuaternion.y;
-    imuData.orientation.z = ngimuQuaternion.z;
+    imuData.orientation.x = -ngimuQuaternion.x;
+    imuData.orientation.y = -ngimuQuaternion.y;
+    imuData.orientation.z = -ngimuQuaternion.z;
     imuData.orientation.w = ngimuQuaternion.w;
 
     imu_low_pass_data = imuData;
