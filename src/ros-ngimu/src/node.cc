@@ -84,9 +84,9 @@ void ngimuSensorsCallback(const NgimuSensors ngimuSensors)
     imuData.angular_velocity.z = ngimuSensors.gyroscopeZ * 0.0174533;
     
     // magnetometer
-    mag_data.magnetic_field.x = ngimuSensors.magnetometerX;
-    mag_data.magnetic_field.y = ngimuSensors.magnetometerY;
-    mag_data.magnetic_field.z = ngimuSensors.magnetometerZ;
+    mag_data.magnetic_field.x = ngimuSensors.magnetometerX * 1000;
+    mag_data.magnetic_field.y = ngimuSensors.magnetometerY * 1000;
+    mag_data.magnetic_field.z = ngimuSensors.magnetometerZ * 1000;
 
     magPub.publish(mag_data);
 };

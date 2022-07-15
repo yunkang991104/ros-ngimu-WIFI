@@ -47,7 +47,7 @@ ImuFilterRos::ImuFilterRos(ros::NodeHandle nh, ros::NodeHandle nh_private)
         publish_debug_topics_ = false;
 
     double yaw_offset = 0.0;
-    if (!nh_private_.getParam("yaw_offset", yaw_offset)) yaw_offset = 0.0;
+    if (!nh_private_.getParam("yaw_offset", yaw_offset)) yaw_offset = -0.785; //0.0;
     double declination = 0.0;
     if (!nh_private_.getParam("declination", declination)) declination = 0.0;
     // create yaw offset quaternion
@@ -123,8 +123,8 @@ ImuFilterRos::ImuFilterRos(ros::NodeHandle nh, ros::NodeHandle nh_private)
     int queue_size = 5;
 
     imu_subscriber_.reset(new ImuSubscriber(
-        // nh_, ros::names::resolve("imu") + "/data_raw", queue_size));
-        nh_, ros::names::resolve("imu") + "/clib", queue_size));
+        nh_, ros::names::resolve("imu") + "/data_raw", queue_size));
+        // nh_, ros::names::resolve("imu") + "/clib", queue_size));
 
 
     if (use_mag_)
