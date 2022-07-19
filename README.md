@@ -31,3 +31,8 @@
 	
 	roslaunch ros-ngimu run_rviz.launch
 	roslaunch imu_filter_madgwick imu_filter_madgwick.launch
+
+## run xioTechnologies imu fution tool
+	
+	roslaunch ros-ngimu run_rviz.launch
+	python src/ros-ngimu/src/Fusion-main/Python/test.py
