@@ -30,7 +30,7 @@ sensor_msgs::Imu imu_low_pass_data;
 
 sensor_msgs::MagneticField mag_data;
 
-float alpha = 0.9;
+float alpha = 0.7;
 float before_x_accel_data = 0;
 float before_y_accel_data = 0;
 float before_z_accel_data = 0;
@@ -41,15 +41,6 @@ float before_z_gyr_data = 0;
 
 void accel_low_pass_filter()
 {
-    before_x_accel_data = imu_low_pass_data.linear_acceleration.x;
-    before_y_accel_data = imu_low_pass_data.linear_acceleration.y;
-    before_z_accel_data = imu_low_pass_data.linear_acceleration.z;
-
-    before_x_gyr_data = imu_low_pass_data.angular_velocity.x;
-    before_y_gyr_data = imu_low_pass_data.angular_velocity.y;
-    before_z_gyr_data = imu_low_pass_data.angular_velocity.z;
-
-
     imu_low_pass_data.linear_acceleration.x = alpha * before_x_accel_data + (1 - alpha) * imuData.linear_acceleration.x;
     imu_low_pass_data.linear_acceleration.y = alpha * before_y_accel_data + (1 - alpha) * imuData.linear_acceleration.y;
     imu_low_pass_data.linear_acceleration.z = alpha * before_z_accel_data + (1 - alpha) * imuData.linear_acceleration.z;
@@ -58,6 +49,15 @@ void accel_low_pass_filter()
     imu_low_pass_data.angular_velocity.y = alpha * before_y_gyr_data + (1 - alpha) * imuData.angular_velocity.y;
     imu_low_pass_data.angular_velocity.z = alpha * before_z_gyr_data + (1 - alpha) * imuData.angular_velocity.z;
 
+    // ROS_INFO("%f" ,(imuData.linear_acceleration.x - imu_low_pass_data.linear_acceleration.x));
+
+    before_x_accel_data = imu_low_pass_data.linear_acceleration.x;
+    before_y_accel_data = imu_low_pass_data.linear_acceleration.y;
+    before_z_accel_data = imu_low_pass_data.linear_acceleration.z;
+
+    before_x_gyr_data = imu_low_pass_data.angular_velocity.x;
+    before_y_gyr_data = imu_low_pass_data.angular_velocity.y;
+    before_z_gyr_data = imu_low_pass_data.angular_velocity.z;
 }
 
 

@@ -35,4 +35,4 @@
 ## run xioTechnologies imu fution tool
 	
 	roslaunch ros-ngimu run_rviz.launch
-	python src/ros-ngimu/src/Fusion-main/Python/test.py
+	python src/Fusion-main/Python/test.py
