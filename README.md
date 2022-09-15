@@ -6,7 +6,7 @@
 	rostopic echo /imu/data
 
 
-## Run imu clibration
+## Run imu calibration
 
 	rosrun imu_calib do_calib
 	
