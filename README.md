@@ -1,5 +1,11 @@
 # ros-ngimu
 
+## First step
+	
+### Give the permission to /ttyACM0
+	
+	sudo chmod 777 /dev/ttyACM0
+
 ## Run imu data
 
 	roslaunch ros-ngimu run.launch
