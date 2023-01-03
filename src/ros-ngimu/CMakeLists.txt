@@ -53,6 +53,10 @@ add_library(Osc99 SHARED
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
+
+add_executable(RecordIMUData src/RecordIMUData.cpp )
+target_link_libraries(RecordIMUData ${catkin_LIBRARIES})
+
 add_executable(ngimu_node src/node.cc src/NgimuReceive.cc
   src/Osc99/OscAddress.c
   src/Osc99/OscBundle.c
