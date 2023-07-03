@@ -1,4 +1,4 @@
-# ros-ngimu
+# ros-ngimu with WI-FI (NOT USB)
 
 ## First step
 	
