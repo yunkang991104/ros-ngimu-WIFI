@@ -2,43 +2,27 @@
 
 ## First step
 	
-### Give the permission to /ttyACM0
+### Connect your NGIMU Wi-Fi
 	
-	sudo chmod 777 /dev/ttyACM0
+	Connect you your NGIMU using your ubuntu => select network.
 
-## Run imu data
+## OPEN BASHRC
+
+	gedit ~/.bashrc
+	
+
+
+## Paste this to bashrc somewhere.Don't forget to comment these code. # export ROS_MASTER_URI=http://localhost:11311 # export ROS_IP=localhost
+
+	# Using NGIMU
+       export ROS_MASTER_URI=http://192.168.1.2:11311
+       export ROS_HOSTNAME=192.168.1.2
+
+## Run imu 
 
 	roslaunch ros-ngimu run.launch
-	rostopic echo /imu/data
-
-
-## Run imu calibration
-
-	rosrun imu_calib do_calib
 	
-	sudo cp imu_calib.yaml ~/.ros
-
-## Run imu clibration data
-
-	roslaunch ros-ngimu run_cal.launch
-	
-## Run rviz imu data
+## Run rviz imu
 
 	roslaunch ros-ngimu run_rviz.launch
 	
-	
-## apply imu accel data low pass filter 
-
-	roslaunch ros-ngimu run_rviz.launch
-	python src/ros-ngimu/src/draw_graph_low_pass.py
-	
-	
-## run madgwick filter
-	
-	roslaunch ros-ngimu run_rviz.launch
-	roslaunch imu_filter_madgwick imu_filter_madgwick.launch
-
-## run xioTechnologies imu fution tool
-	
-	roslaunch ros-ngimu run_rviz.launch
-	python src/Fusion-main/Python/test.py
