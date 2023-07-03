@@ -136,7 +136,7 @@ Visualization Manager:
       Enabled: true
       Name: Imu
       Queue Size: 10
-      Topic: ""
+      Topic: "/imu/data_raw"
       Unreliable: false
       Value: true
       fixed_frame_orientation: true
