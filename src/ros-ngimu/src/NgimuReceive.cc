@@ -236,6 +236,30 @@ static OscError ProcessSensors(const OscTimeTag * const oscTimeTag, OscMessage *
         return oscError;
     }
 
+    //////// Get quaternionX
+    //oscError = OscMessageGetArgumentAsFloat32(oscMessage, &ngimuSensors.quaternionX);
+    //if (oscError != OscErrorNone) {
+    //    return oscError;
+    //}
+    
+    //////// Get quaternionY    
+    //oscError = OscMessageGetArgumentAsFloat32(oscMessage, &ngimuSensors.quaternionY);
+    //if (oscError != OscErrorNone) {
+    //    return oscError;
+    //}
+    
+    //////// Get quaternionZ    
+    //oscError = OscMessageGetArgumentAsFloat32(oscMessage, &ngimuSensors.quaternionZ);
+    //if (oscError != OscErrorNone) {
+    //    return oscError;
+    //}
+    
+    //////// Get quaternionW    
+    //oscError = OscMessageGetArgumentAsFloat32(oscMessage, &ngimuSensors.quaternionW);
+    //if (oscError != OscErrorNone) {
+    //    return oscError;
+    //}
+
     // Get barometer
     oscError = OscMessageGetArgumentAsFloat32(oscMessage, &ngimuSensors.barometer);
     if (oscError != OscErrorNone) {
