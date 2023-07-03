@@ -12,7 +12,7 @@
 	
 
 
-## Paste this to bashrc somewhere.Don't forget to comment these code. # export ROS_MASTER_URI=http://localhost:11311 # export ROS_IP=localhost
+## Paste this to bashrc somewhere.Don't forget to comment these code lines. # export ROS_MASTER_URI=http://localhost:11311 # export ROS_IP=localhost
 
 	# Using NGIMU
        export ROS_MASTER_URI=http://192.168.1.2:11311
